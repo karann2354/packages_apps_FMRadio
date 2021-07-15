@@ -363,7 +363,7 @@ public class FmService extends Service implements FmRecorder.OnRecorderStateChan
      * @return true, antenna available; false, antenna not available
      */
     public boolean isAntennaAvailable() {
-        return mAudioManager.isWiredHeadsetOn();
+        return true;
     }
 
     private void setForceUse(boolean isSpeaker) {
@@ -2440,7 +2440,7 @@ public class FmService extends Service implements FmRecorder.OnRecorderStateChan
                 // switch antenna
                 case FmListener.MSGID_SWITCH_ANTENNA:
                     bundle = msg.getData();
-                    int value = bundle.getInt(FmListener.SWITCH_ANTENNA_VALUE);
+                    int value = 0;
 
                     // if ear phone insert, need dismiss plugin earphone
                     // dialog

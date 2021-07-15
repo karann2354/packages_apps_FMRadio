@@ -242,7 +242,7 @@ public class FmMainActivity extends Activity implements FmFavoriteEditDialog.Edi
 
                 case FmListener.MSGID_SWITCH_ANTENNA:
                     bundle = msg.getData();
-                    boolean hasAntenna = bundle.getBoolean(FmListener.KEY_IS_SWITCH_ANTENNA);
+                    boolean hasAntenna = true;
                     // if receive headset plug out, need set headset mode on ui
                     if (hasAntenna) {
                         if (mIsActivityForeground) {
@@ -852,7 +852,7 @@ public class FmMainActivity extends Activity implements FmFavoriteEditDialog.Edi
      * @return true or false indicate antenna available or not
      */
     private boolean isAntennaAvailable() {
-        return mAudioManager.isWiredHeadsetOn();
+        return true;
     }
 
     /**
